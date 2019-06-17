@@ -12,10 +12,6 @@ app:
     RABBITMQ_USERNAME: guest
     RABBITMQ_PASSWORD: guest
     JDBC_URL: jdbc:mysql://mysql:3306/axr_challenge?user=root&password=secret
-  #ports: 
-  #  - "8085:8085" # expose ports 8085 - remove after testing
-  #volumes:
-  #    - /tmp:/tmp # volumes deve ser removido após os testes
   links:
     - mysql:mysql
     - rabbitmq:rabbitmq
@@ -25,11 +21,8 @@ mysql:
   environment:
     MYSQL_DATABASE: axr_challenge
     MYSQL_ROOT_PASSWORD: secret
-  ports:
-    - "3306:3306" # expose port 3306 - remove after testing
   
 rabbitmq:
   image: rabbitmq:3.6-management
   ports:
-    - 5672:5672 # expose port 5672 - remove after testing
     - 15672:15672
