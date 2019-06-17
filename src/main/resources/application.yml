@@ -1,0 +1,25 @@
+spring:
+
+  rabbitmq:
+    host: ${RABBITMQ_HOST}
+    port: ${RABBITMQ_PORT}
+    virtual-host: ${RABBITMQ_VHOST}
+    username: ${RABBITMQ_USERNAME}
+    password: ${RABBITMQ_PASSWORD}
+    
+  datasource:
+    url: ${JDBC_URL}
+
+  jpa:
+    hibernate:
+      ddl-auto: create # Hibernate ddl auto (create, create-drop, validate, update)
+      
+logging:
+  file: /tmp/axur_whitelist.log
+  pattern:
+    console: "%d %-5level %logger : %msg%n"
+    file: "%d %-5level [%thread] %logger : %msg%n"
+  level:
+    root: INFO
+    com.axur: DEBUG
+    org.springframework.web: INFO
